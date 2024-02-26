@@ -1,5 +1,8 @@
 import "./style.css";
 import { setup } from "./setup";
+import { ProfileIcon } from "./components/profileIcon";
+
+customElements.define("profile-icon", ProfileIcon);
 
 document.querySelector<HTMLDivElement>("body")!.innerHTML = `
 <div class="app-container">
@@ -33,10 +36,7 @@ document.querySelector<HTMLDivElement>("body")!.innerHTML = `
           <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
           <path d="M13.73 21a2 2 0 0 1-3.46 0" /></svg>
       </button>
-      <button class="profile-btn">
-        <img src="https://assets.codepen.io/3306515/IMG_2025.jpg" />
-        <span>Aybüke C.</span>
-      </button>
+     <profile-icon></profile-icon>
     </div>
     <button class="messages-btn">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle">
@@ -455,3 +455,4 @@ document.querySelector<HTMLDivElement>("body")!.innerHTML = `
 `;
 
 setup();
+
