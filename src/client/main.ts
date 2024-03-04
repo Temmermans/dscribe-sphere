@@ -6,7 +6,6 @@ import { ViewActions } from "./components/viewActions";
 
 customElements.define("my-toolbar", Toolbar);
 customElements.define("profile-icon", ProfileIcon);
-customElements.define("view-actions", ViewActions);
 
 document.querySelector<HTMLDivElement>("body")!.innerHTML = `
 <div class="app-container">
@@ -70,18 +69,9 @@ document.querySelector<HTMLDivElement>("body")!.innerHTML = `
       </div>
       <div class="projects-section-line">
         <div class="projects-status">
-          <div class="item-status">
-            <span class="status-number">45</span>
-            <span class="status-type">In Progress</span>
-          </div>
-          <div class="item-status">
-            <span class="status-number">24</span>
-            <span class="status-type">Upcoming</span>
-          </div>
-          <div class="item-status">
-            <span class="status-number">62</span>
-            <span class="status-type">Total Projects</span>
-          </div>
+          <project-status-item data-status="In Progress" data-number="45"></project-status-item>
+          <project-status-item data-status="Upcoming" data-number="24"></project-status-item>
+          <project-status-item data-status="Total Projects" data-number="62"></project-status-item>
         </div>
         <view-actions></view-actions>
         <div class="project-boxes jsGridView">
