@@ -1,6 +1,6 @@
 import "./style.css";
 import { setup } from "./setup";
-import {Toolbar} from  './components/Toolbar';
+import { Toolbar } from "./components/Toolbar";
 import { ProfileIcon } from "./components/profileIcon";
 
 customElements.define("my-toolbar", Toolbar);
@@ -441,7 +441,7 @@ document.querySelector<HTMLDivElement>("body")!.innerHTML = `
   </div>
 </div>
 </div>
-</div>
+</div> 
 `;
 
 setup();
