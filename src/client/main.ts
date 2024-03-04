@@ -3,12 +3,12 @@ import { setup } from "./setup";
 import { Toolbar } from "./components/Toolbar";
 import { ProfileIcon } from "./components/profileIcon";
 import { ProjectStatusItem } from "./components/projectStatusItem";
-import { MessageItem } from "./components/messageItem";
+
 
 customElements.define("my-toolbar", Toolbar);
 customElements.define("profile-icon", ProfileIcon);
 customElements.define("project-status-item", ProjectStatusItem);
-customElements.define("message-item", MessageItem);
+
 
 document.querySelector<HTMLDivElement>("body")!.innerHTML = `
 <div class="app-container">
