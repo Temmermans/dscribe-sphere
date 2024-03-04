@@ -1,8 +1,10 @@
 import "./style.css";
 import { setup } from "./setup";
 import {Toolbar} from  './components/Toolbar';
+import { ProfileIcon } from "./components/profileIcon";
 
 customElements.define("my-toolbar", Toolbar);
+customElements.define("profile-icon", ProfileIcon);
 
 document.querySelector<HTMLDivElement>("body")!.innerHTML = `
 <div class="app-container">
@@ -21,10 +23,10 @@ document.querySelector<HTMLDivElement>("body")!.innerHTML = `
     </div>
     <div class="app-header-right">
   <my-toolbar></my-toolbar>
-      <button class="profile-btn">
-        <img src="https://assets.codepen.io/3306515/IMG_2025.jpg" />
-        <span>Aybüke C.</span>
-      </button>
+  <profile-icon data-user=${JSON.stringify({
+    name: "Diva",
+    picture: "https://assets.codepen.io/3306515/IMG_2025.jpg",
+  })} ></profile-icon>
     </div>
     <button class="messages-btn">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle">
