@@ -2,12 +2,11 @@ import "./style.css";
 import { setup } from "./setup";
 import { Toolbar } from "./components/Toolbar";
 import { ProfileIcon } from "./components/profileIcon";
-import { ViewActions } from "./components/viewActions";
-
+import { Toggle } from "./components/viewActions";
 
 customElements.define("my-toolbar", Toolbar);
 customElements.define("profile-icon", ProfileIcon);
-
+customElements.define("toggle", Toggle);
 
 document.querySelector<HTMLDivElement>("body")!.innerHTML = `
 <div class="app-container">
