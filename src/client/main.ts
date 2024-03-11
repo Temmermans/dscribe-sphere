@@ -2,13 +2,11 @@ import "./style.css";
 import { setup } from "./setup";
 import { Toolbar } from "./components/Toolbar";
 import { ProfileIcon } from "./components/profileIcon";
-import { ProjectStatusItem } from "./components/projectStatusItem";
-
+import { Toggle } from "./components/viewActions";
 
 customElements.define("my-toolbar", Toolbar);
 customElements.define("profile-icon", ProfileIcon);
-customElements.define("project-status-item", ProjectStatusItem);
-
+customElements.define("toggle", Toggle);
 
 document.querySelector<HTMLDivElement>("body")!.innerHTML = `
 <div class="app-container">
@@ -76,39 +74,21 @@ document.querySelector<HTMLDivElement>("body")!.innerHTML = `
           <project-status-item data-status="Upcoming" data-number="24"></project-status-item>
           <project-status-item data-status="Total Projects" data-number="62"></project-status-item>
         </div>
-        <div class="view-actions">
-          <button class="view-btn list-view" title="List View">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list">
-              <line x1="8" y1="6" x2="21" y2="6" />
-              <line x1="8" y1="12" x2="21" y2="12" />
-              <line x1="8" y1="18" x2="21" y2="18" />
-              <line x1="3" y1="6" x2="3.01" y2="6" />
-              <line x1="3" y1="12" x2="3.01" y2="12" />
-              <line x1="3" y1="18" x2="3.01" y2="18" /></svg>
-          </button>
-          <button class="view-btn grid-view active" title="Grid View">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
-              <rect x="3" y="3" width="7" height="7" />
-              <rect x="14" y="3" width="7" height="7" />
-              <rect x="14" y="14" width="7" height="7" />
-              <rect x="3" y="14" width="7" height="7" /></svg>
-          </button>
-        </div>
+        <view-actions></view-actions>
+        <div class="project-boxes jsGridView">
+    <div class="project-box-wrapper">
+      <div class="project-box" style="background-color: #fee4cb;">
+        <div class="project-box-header">
+          <span>December 10, 2020</span>
+          <div class="more-wrapper">
+            <button class="project-btn-more">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                <circle cx="12" cy="12" r="1" />
+                <circle cx="12" cy="5" r="1" />
+                <circle cx="12" cy="19" r="1" /></svg>
+            </button>
       </div>
-      <div class="project-boxes jsGridView">
-        <div class="project-box-wrapper">
-          <div class="project-box" style="background-color: #fee4cb;">
-            <div class="project-box-header">
-              <span>December 10, 2020</span>
-              <div class="more-wrapper">
-                <button class="project-btn-more">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
-                    <circle cx="12" cy="12" r="1" />
-                    <circle cx="12" cy="5" r="1" />
-                    <circle cx="12" cy="19" r="1" /></svg>
-                </button>
-          </div>
-        </div>
+    </div>
         <div class="project-box-content-header">
           <p class="box-content-header">Web Designing</p>
           <p class="box-content-subheader">Prototyping</p>
