@@ -7,7 +7,7 @@ import { NavBarButton } from "./components/navBarButton";
 
 customElements.define("my-toolbar", Toolbar);
 customElements.define("profile-icon", ProfileIcon);
-customElements.define("toggle", Toggle);
+customElements.define("toggle-btn", Toggle);
 import { ProjectStatusItem } from "./components/projectStatusItem";
 customElements.define("project-status-item", ProjectStatusItem);
 customElements.define("nav-bar-button", NavBarButton);
