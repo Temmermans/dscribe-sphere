@@ -1,23 +1,32 @@
 import { html, render } from "lit-html";
+import Router from "../services/router";
 
 export class NavBarButton extends HTMLElement {
   image: string;
-  href: string;
+  route: string;
   constructor() {
     super();
     this.image = this.dataset.image
       ? this.dataset.image
       : "http://www.w3.org/2000/svg";
-    this.href = this.dataset.href ? this.dataset.href : "";
+    this.route = this.dataset.route ? this.dataset.route : "";
   }
 
   connectedCallback() {
     render(this.template(), this);
   }
 
+  navigate = (e: {
+    preventDefault: () => void;
+    target: { getAttribute: (arg0: string) => any };
+  }) => {
+    e.preventDefault();
+    Router.go(this.route);
+  };
+
   template() {
     return html`
-      <a href="" class="app-sidebar-link active">
+      <a @click=${this.navigate} class="app-sidebar-link active">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
