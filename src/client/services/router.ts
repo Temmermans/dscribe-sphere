@@ -7,7 +7,6 @@ const Router = {
     });
   },
   go: (route: string | URL | null | undefined, addToHistory = true) => {
-    console.log(route);
     if (addToHistory) {
       history.pushState({ route }, "", route);
     }

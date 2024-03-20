@@ -1,5 +1,4 @@
 import { html, render } from "lit-html";
-import Router from "../services/router";
 
 export class NavBarButton extends HTMLElement {
   image: string;
@@ -16,17 +15,16 @@ export class NavBarButton extends HTMLElement {
     render(this.template(), this);
   }
 
-  navigate = (e: {
-    preventDefault: () => void;
-    target: { getAttribute: (arg0: string) => any };
-  }) => {
-    e.preventDefault();
-    Router.go(this.route);
+  fireOnClick = () => {
+    const event = new CustomEvent("on-click", {
+      detail: { route: this.route },
+    });
+    this.dispatchEvent(event);
   };
 
   template() {
     return html`
-      <a @click=${this.navigate} class="app-sidebar-link active">
+      <a @click=${this.fireOnClick} class="app-sidebar-link">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
