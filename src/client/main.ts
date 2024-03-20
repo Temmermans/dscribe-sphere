@@ -4,11 +4,13 @@ import { Toolbar } from "./components/Toolbar";
 import { ProfileIcon } from "./components/profileIcon";
 import { Toggle } from "./components/viewActions";
 import { Card } from "./components/card";
+import { CardList } from "./components/cardList";
 
 customElements.define("my-toolbar", Toolbar);
 customElements.define("profile-icon", ProfileIcon);
 customElements.define("toggle-btn", Toggle);
 customElements.define("overview-card", Card);
+customElements.define("card-list", CardList);
 
 document.querySelector<HTMLDivElement>("body")!.innerHTML = `
 <div class="app-container">
@@ -85,7 +87,6 @@ document.querySelector<HTMLDivElement>("body")!.innerHTML = `
         
         <div class="project-boxes jsGridView">
         <overview-card></overview-card>
-g
   
     <div class="project-box-wrapper">
       <div class="project-box" style="background-color: #e9e7fd;">

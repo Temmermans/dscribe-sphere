@@ -1,5 +1,4 @@
 import { html, render } from "lit-html";
-import { Card } from "./card";
 
 export class CardList extends HTMLElement {
   cards: any[];
@@ -14,7 +13,7 @@ export class CardList extends HTMLElement {
   render = () => {
     render(
       html`<div class="overview-card-grid">
-        ${this.cards.map((card) => "<overview-card></overview-card>")}
+        ${this.cards.map((_card) => "<overview-card></overview-card>")}
       </div>`,
       this
     );
