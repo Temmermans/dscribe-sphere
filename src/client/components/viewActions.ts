@@ -76,8 +76,7 @@ export class Toggle extends HTMLElement {
 
   render = () => {
     render(
-      html`
-        <style></style>
+      html
         <div class="toggle">
           <button
             @click=${this.leftButton}

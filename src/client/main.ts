@@ -56,14 +56,7 @@ document.querySelector<HTMLDivElement>("body")!.innerHTML = `
           <project-status-item data-status="Upcoming" data-number="24"></project-status-item>
           <project-status-item data-status="Total Projects" data-number="62"></project-status-item>
         </div>
-
-       
-       
         <overview-card></overview-card>
-        
-   
-  
-   
         </div>
       </div>
     </div>

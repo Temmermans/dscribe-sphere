@@ -49,9 +49,6 @@ export class Card extends HTMLElement {
             </div>
             <p class="box-progress-percentage">60%</p>
           </div>
-          <div class="project-box-footer">
-           
-            </div>
           </div>
         </div>
       </div>`,
