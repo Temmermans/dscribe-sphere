@@ -8,7 +8,41 @@ export class Toggle extends HTMLElement {
 
   connectedCallback() {
     this.render();
+    this.addStyle(`
+    .toggle {
+      display: flex;
+      align-items: center;
+    }
+    .toggle-btn {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 6px;
+      border-radius: 4px;
+      background-color: transparent;
+      border: none;
+      color: var(--main-color);
+      margin-left: 8px;
+      transition: 0.2s;
+    }
+    .toggle-btn.active {
+      background-color: var(--link-color-active-bg);
+      color: var(--link-color-active);
+    }
+    .toggle-btn:not(.active):hover {
+      background-color: var(--link-color-hover);
+      color: var(--link-color-active);
+    }
+    `);
   }
+
+  addStyle = (styleString: string) => {
+    const style = document.createElement("style");
+    style.textContent = styleString;
+    this.shadowRoot?.append(style);
+  };
 
   rightButton = () => {
     var listView = this.shadowRoot?.querySelector(".left-button");
@@ -43,34 +77,7 @@ export class Toggle extends HTMLElement {
   render = () => {
     render(
       html`
-        <style>
-          .toggle {
-            display: flex;
-            align-items: center;
-          }
-          .toggle-btn {
-            width: 36px;
-            height: 36px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 6px;
-            border-radius: 4px;
-            background-color: transparent;
-            border: none;
-            color: var(--main-color);
-            margin-left: 8px;
-            transition: 0.2s;
-          }
-          .toggle-btn.active {
-            background-color: var(--link-color-active-bg);
-            color: var(--link-color-active);
-          }
-          .toggle-btn:not(.active):hover {
-            background-color: var(--link-color-hover);
-            color: var(--link-color-active);
-          }
-        </style>
+        <style></style>
         <div class="toggle">
           <button
             @click=${this.leftButton}
