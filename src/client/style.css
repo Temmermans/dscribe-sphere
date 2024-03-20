@@ -243,7 +243,7 @@ a {
   background-color: var(--link-color-active-bg);
   color: var(--link-color-active);
 }
-.projects-section {
+.page-wrapper {
   flex: 2;
   background-color: var(--projects-section);
   border-radius: 32px;
