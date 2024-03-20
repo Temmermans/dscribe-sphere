@@ -307,11 +307,11 @@ a {
   padding-right: 24px;
   color: var(--secondary-color);
 }
-.view-actions {
+.toggle {
   display: flex;
   align-items: center;
 }
-.view-btn {
+.toggle-btn {
   width: 36px;
   height: 36px;
   display: flex;
@@ -325,11 +325,11 @@ a {
   margin-left: 8px;
   transition: 0.2s;
 }
-.view-btn.active {
+.toggle-btn.active {
   background-color: var(--link-color-active-bg);
   color: var(--link-color-active);
 }
-.view-btn:not(.active):hover {
+.toggle-btn:not(.active):hover {
   background-color: var(--link-color-hover);
   color: var(--link-color-active);
 }
