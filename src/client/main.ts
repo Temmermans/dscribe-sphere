@@ -76,10 +76,14 @@ document.querySelector<HTMLDivElement>("body")!.innerHTML = `
           <project-status-item data-status="Upcoming" data-number="24"></project-status-item>
           <project-status-item data-status="Total Projects" data-number="62"></project-status-item>
         </div>
-        <view-actions></view-actions>
+
+        <toggle-btn> 
+       
+        <p slot="left-content">bla</p>
+        <p slot="right-content">blabla</p>
+        </toggle-btn>
+        
         <div class="project-boxes jsGridView">
-        <overview-card></overview-card>
-   
   
     <div class="project-box-wrapper">
       <div class="project-box" style="background-color: #e9e7fd;">

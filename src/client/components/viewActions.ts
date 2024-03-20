@@ -23,9 +23,6 @@ export class Toggle extends HTMLElement {
 
     listView?.classList.remove("active");
     gridView?.classList.add("active");
-
-    console.log(listView);
-    console.log(gridView);
   };
 
   leftButton = () => {
@@ -41,9 +38,6 @@ export class Toggle extends HTMLElement {
 
     gridView?.classList.remove("active");
     listView?.classList.add("active");
-
-    console.log(gridView);
-    console.log(listView);
   };
 
   render = () => {
