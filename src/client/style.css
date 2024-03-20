@@ -418,7 +418,7 @@ a {
 .project-box-content-header p {
   margin: 0;
 }
-.project-box-wrapper {
+.overview-card-grid {
   padding: 8px;
   transition: 0.2s;
 }
