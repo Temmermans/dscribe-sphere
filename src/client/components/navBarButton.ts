@@ -5,9 +5,7 @@ export class NavBarButton extends HTMLElement {
   route: string;
   constructor() {
     super();
-    this.image = this.dataset.image
-      ? this.dataset.image
-      : "http://www.w3.org/2000/svg";
+    this.image = this.dataset.image ? this.dataset.image : "http://www.w3.org/2000/svg";
     this.route = this.dataset.route ? this.dataset.route : "";
   }
 
