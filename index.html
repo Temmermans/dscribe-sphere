@@ -5,13 +5,15 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>dScribe Sphere</title>
-    
+    <script type="module" defer src="/src/client/main.ts"></script>
   </head>
   <body>
-
-
-
-
-    <script type="module" src="/src/client/main.ts"></script>
+    <div class="app-container">
+      <app-header></app-header>
+      <div class="app-content">
+        <nav-bar></nav-bar>
+        <div class="page-wrapper"><div id="main"></div></div>
+      </div>
+    </div>
   </body>
 </html>

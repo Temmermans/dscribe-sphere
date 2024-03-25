@@ -2,7 +2,7 @@ import "./style.css";
 
 import { Toolbar } from "./components/Toolbar";
 import { ProfileIcon } from "./components/profileIcon";
-import { Toggle } from "./components/viewActions";
+import { Toggle } from "./components/toggleButton";
 import { NavBarButton } from "./components/navBarButton";
 import { NavBar } from "./components/navBar";
 import Company from "./pages/company";
@@ -12,6 +12,7 @@ import Router from "./services/router";
 import { Card } from "./components/card";
 import { Header } from "./components/header";
 import { Search } from "./components/search";
+import graphql from "./services/graphql";
 
 customElements.define("my-toolbar", Toolbar);
 customElements.define("profile-icon", ProfileIcon);
@@ -25,14 +26,25 @@ customElements.define("nav-bar", NavBar);
 customElements.define("app-header", Header);
 customElements.define("app-search", Search);
 
-document.querySelector<HTMLDivElement>("body")!.innerHTML = `
-<div class="app-container">
-  <app-header></app-header>
-  <div class="app-content">
-    <nav-bar></nav-bar>
-    <div class="page-wrapper"><div id="main"></div></div> 
-  </div>
-</div> 
-`;
-
 Router.init();
+
+graphql
+  .query(
+    /* GraphQL */ `
+      query ME {
+        ME {
+          id
+          email
+          firstname
+          lastname
+          picture
+          permissionset
+          teams
+          is_superuser
+        }
+      }
+    `
+  )
+  .then((response) => {
+    console.log(response);
+  });
